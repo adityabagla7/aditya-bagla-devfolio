@@ -10,7 +10,7 @@
 
 **A stunning, modern portfolio website built with cutting-edge technologies**
 
-[🌐 Live Demo](https://your-portfolio-url.com) • [📧 Contact](mailto:adityabaglaa18@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/aditya-bagla-a4b4b9252/)
+[🌐 Live Demo](https://aditya-bagla-devfolio.vercel.app/) • [📧 Contact](mailto:adityabaglaa18@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/aditya-bagla-a4b4b9252/)
 
 </div>
 
