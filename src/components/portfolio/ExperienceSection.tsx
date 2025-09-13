@@ -32,19 +32,22 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="py-24 bg-portfolio-surface/30">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             <span className="text-portfolio-text">Work</span>{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Experience</span>
+            <span className="gradient-text">Experience</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+          <div className="w-24 h-1.5 bg-gradient-primary mx-auto rounded-full shadow-portfolio-glow"></div>
+          <p className="text-portfolio-text-muted max-w-2xl mx-auto mt-6 text-lg">
+            Professional experiences that shaped my skills and expertise
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
             <Card 
               key={index} 
-              className="bg-portfolio-surface border-portfolio-surface-hover hover:border-portfolio-accent/30 hover:shadow-portfolio-lg transition-all duration-300 p-8"
+              className="modern-card p-10 hover:shadow-portfolio-xl group"
             >
               <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                 <div className="lg:w-1/3">

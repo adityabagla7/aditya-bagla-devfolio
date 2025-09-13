@@ -49,16 +49,24 @@ All colors MUST be HSL.
     --portfolio-accent-hover: 35 100% 60%;
     --portfolio-accent-foreground: 225 10% 8%;
 
-    /* Gradients */
+    /* Modern Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--portfolio-accent)), hsl(35 100% 45%));
     --gradient-surface: linear-gradient(135deg, hsl(var(--portfolio-surface)), hsl(225 8% 12%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--portfolio-accent) / 0.15), transparent 70%);
+    --gradient-mesh: conic-gradient(from 0deg at 50% 50%, hsl(var(--portfolio-accent) / 0.1), hsl(225 10% 15% / 0.1), hsl(var(--portfolio-accent) / 0.05), hsl(225 10% 15% / 0.1));
     
-    /* Shadows */
+    /* Modern Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(var(--portfolio-accent) / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(var(--portfolio-accent) / 0.1), 0 2px 4px -1px hsl(var(--portfolio-accent) / 0.06);
     --shadow-lg: 0 10px 15px -3px hsl(var(--portfolio-accent) / 0.1), 0 4px 6px -2px hsl(var(--portfolio-accent) / 0.05);
-    --shadow-glow: 0 0 20px hsl(var(--portfolio-accent) / 0.3);
+    --shadow-xl: 0 20px 25px -5px hsl(var(--portfolio-accent) / 0.1), 0 10px 10px -5px hsl(var(--portfolio-accent) / 0.04);
+    --shadow-glow: 0 0 30px hsl(var(--portfolio-accent) / 0.4);
+    --shadow-glow-lg: 0 0 60px hsl(var(--portfolio-accent) / 0.3);
 
-    /* Animations */
+    /* Modern Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   }
 }
 
@@ -68,6 +76,102 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  /* Modern scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--portfolio-surface));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--portfolio-accent) / 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--portfolio-accent) / 0.5);
+  }
+}
+
+@layer components {
+  /* Glassmorphism utility */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-dark {
+    background: hsl(var(--portfolio-surface) / 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--portfolio-accent) / 0.1);
+  }
+
+  /* Modern card styles */
+  .modern-card {
+    background: hsl(var(--portfolio-surface));
+    border: 1px solid hsl(var(--portfolio-surface-hover));
+    transition: var(--transition-smooth);
+  }
+
+  .modern-card:hover {
+    border-color: hsl(var(--portfolio-accent) / 0.3);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Pulse glow */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    from { box-shadow: 0 0 20px hsl(var(--portfolio-accent) / 0.2); }
+    to { box-shadow: 0 0 40px hsl(var(--portfolio-accent) / 0.4); }
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--portfolio-accent)), hsl(35 100% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Modern button */
+  .btn-modern {
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+  }
+
+  .btn-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-modern:hover::before {
+    left: 100%;
   }
 }

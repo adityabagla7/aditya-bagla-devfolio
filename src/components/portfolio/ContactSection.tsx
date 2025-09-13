@@ -86,12 +86,12 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24 bg-portfolio-surface/30">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             <span className="text-portfolio-text">Get In</span>{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
+            <span className="gradient-text">Touch</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+          <div className="w-24 h-1.5 bg-gradient-primary mx-auto rounded-full shadow-portfolio-glow"></div>
           <p className="text-portfolio-text-muted max-w-2xl mx-auto mt-6 text-lg">
             Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.
           </p>
@@ -100,13 +100,18 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-5 gap-12 max-w-7xl mx-auto">
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <Card className="bg-portfolio-surface border-portfolio-surface-hover p-8">
-              <h3 className="text-2xl font-bold text-portfolio-text mb-6">Send Me a Message</h3>
+            <Card className="modern-card p-10 hover:shadow-portfolio-xl">
+              <h3 className="text-3xl font-bold text-portfolio-text mb-8 flex items-center gap-3">
+                <div className="glass p-3 rounded-xl">
+                  <Send className="text-portfolio-accent" size={24} />
+                </div>
+                Send Me a Message
+              </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <label className="text-portfolio-text font-medium mb-2 block">
+                    <label className="text-portfolio-text font-semibold mb-3 block text-lg">
                       Your Name
                     </label>
                     <Input
@@ -114,12 +119,12 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className="bg-portfolio-bg border-portfolio-surface-hover focus:border-portfolio-accent text-portfolio-text"
+                      className="glass border-portfolio-accent/30 focus:border-portfolio-accent text-portfolio-text text-lg py-4 rounded-xl transition-all duration-300 hover:shadow-portfolio-sm"
                       required
                     />
                   </div>
                   <div>
-                    <label className="text-portfolio-text font-medium mb-2 block">
+                    <label className="text-portfolio-text font-semibold mb-3 block text-lg">
                       Email Address
                     </label>
                     <Input
@@ -128,14 +133,14 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john@example.com"
-                      className="bg-portfolio-bg border-portfolio-surface-hover focus:border-portfolio-accent text-portfolio-text"
+                      className="glass border-portfolio-accent/30 focus:border-portfolio-accent text-portfolio-text text-lg py-4 rounded-xl transition-all duration-300 hover:shadow-portfolio-sm"
                       required
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-portfolio-text font-medium mb-2 block">
+                  <label className="text-portfolio-text font-semibold mb-3 block text-lg">
                     Subject
                   </label>
                   <Input
@@ -143,13 +148,13 @@ const ContactSection = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Project Discussion"
-                    className="bg-portfolio-bg border-portfolio-surface-hover focus:border-portfolio-accent text-portfolio-text"
+                    className="glass border-portfolio-accent/30 focus:border-portfolio-accent text-portfolio-text text-lg py-4 rounded-xl transition-all duration-300 hover:shadow-portfolio-sm"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="text-portfolio-text font-medium mb-2 block">
+                  <label className="text-portfolio-text font-semibold mb-3 block text-lg">
                     Message
                   </label>
                   <Textarea
@@ -158,16 +163,16 @@ const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="Tell me about your project..."
                     rows={6}
-                    className="bg-portfolio-bg border-portfolio-surface-hover focus:border-portfolio-accent text-portfolio-text resize-none"
+                    className="glass border-portfolio-accent/30 focus:border-portfolio-accent text-portfolio-text resize-none rounded-xl transition-all duration-300 hover:shadow-portfolio-sm text-lg"
                     required
                   />
                 </div>
 
                 <Button 
                   type="submit"
-                  className="w-full bg-gradient-primary text-portfolio-accent-foreground hover:shadow-portfolio-glow transition-all duration-300"
+                  className="btn-modern w-full bg-gradient-primary text-portfolio-accent-foreground hover:shadow-portfolio-glow hover:scale-105 transition-all duration-300 py-4 text-lg rounded-xl"
                 >
-                  <Send className="mr-2" size={16} />
+                  <Send className="mr-2" size={18} />
                   Send Message
                 </Button>
               </form>
@@ -175,22 +180,27 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info & Social */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-10">
             {/* Contact Information */}
-            <Card className="bg-portfolio-surface border-portfolio-surface-hover p-8">
-              <h3 className="text-2xl font-bold text-portfolio-text mb-6">Contact Information</h3>
+            <Card className="modern-card p-10 hover:shadow-portfolio-xl">
+              <h3 className="text-3xl font-bold text-portfolio-text mb-8 flex items-center gap-3">
+                <div className="glass p-3 rounded-xl">
+                  <Mail className="text-portfolio-accent" size={24} />
+                </div>
+                Contact Information
+              </h3>
               
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
                   const content = (
-                    <div className="flex items-center gap-4 group">
-                      <div className="bg-portfolio-accent/10 p-3 rounded-lg group-hover:bg-portfolio-accent/20 transition-colors duration-300">
-                        <IconComponent className="text-portfolio-accent" size={20} />
+                    <div className="flex items-center gap-6 group">
+                      <div className="glass p-4 rounded-2xl group-hover:scale-110 group-hover:shadow-portfolio-glow transition-all duration-300">
+                        <IconComponent className="text-portfolio-accent" size={24} />
                       </div>
                       <div>
-                        <p className="text-portfolio-text-muted text-sm">{info.label}</p>
-                        <p className="text-portfolio-text font-medium">{info.value}</p>
+                        <p className="text-portfolio-text-muted text-sm font-medium uppercase tracking-wider">{info.label}</p>
+                        <p className="text-portfolio-text font-semibold text-lg mt-1">{info.value}</p>
                       </div>
                     </div>
                   );
@@ -199,12 +209,12 @@ const ContactSection = () => {
                     <a 
                       key={index}
                       href={info.href}
-                      className="block hover:bg-portfolio-surface-hover p-2 rounded-lg transition-colors duration-300"
+                      className="block hover:bg-portfolio-surface-hover p-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-portfolio-md"
                     >
                       {content}
                     </a>
                   ) : (
-                    <div key={index} className="p-2">
+                    <div key={index} className="p-4">
                       {content}
                     </div>
                   );
@@ -213,35 +223,45 @@ const ContactSection = () => {
             </Card>
 
             {/* Availability */}
-            <Card className="bg-portfolio-surface border-portfolio-surface-hover p-8">
-              <h3 className="text-2xl font-bold text-portfolio-text mb-6">Availability</h3>
+            <Card className="modern-card p-10 hover:shadow-portfolio-xl">
+              <h3 className="text-3xl font-bold text-portfolio-text mb-8 flex items-center gap-3">
+                <div className="glass p-3 rounded-xl">
+                  <Calendar className="text-portfolio-accent" size={24} />
+                </div>
+                Availability
+              </h3>
               
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="bg-green-500/20 p-2 rounded-lg">
-                    <Calendar className="text-green-400" size={16} />
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="glass p-3 rounded-2xl">
+                    <Calendar className="text-green-400" size={20} />
                   </div>
                   <div>
-                    <p className="text-portfolio-text font-medium">Currently Available</p>
-                    <p className="text-portfolio-text-muted text-sm">Open for new opportunities</p>
+                    <p className="text-portfolio-text font-semibold text-lg">Currently Available</p>
+                    <p className="text-portfolio-text-muted">Open for new opportunities</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3">
-                  <div className="bg-portfolio-accent/20 p-2 rounded-lg">
-                    <Clock className="text-portfolio-accent" size={16} />
+                <div className="flex items-center gap-4">
+                  <div className="glass p-3 rounded-2xl">
+                    <Clock className="text-portfolio-accent" size={20} />
                   </div>
                   <div>
-                    <p className="text-portfolio-text font-medium">Response Time</p>
-                    <p className="text-portfolio-text-muted text-sm">Within 24 hours</p>
+                    <p className="text-portfolio-text font-semibold text-lg">Response Time</p>
+                    <p className="text-portfolio-text-muted">Within 24 hours</p>
                   </div>
                 </div>
               </div>
             </Card>
 
             {/* Social Links */}
-            <Card className="bg-portfolio-surface border-portfolio-surface-hover p-8">
-              <h3 className="text-2xl font-bold text-portfolio-text mb-6">Connect With Me</h3>
+            <Card className="modern-card p-10 hover:shadow-portfolio-xl">
+              <h3 className="text-3xl font-bold text-portfolio-text mb-8 flex items-center gap-3">
+                <div className="glass p-3 rounded-xl">
+                  <Linkedin className="text-portfolio-accent" size={24} />
+                </div>
+                Connect With Me
+              </h3>
               
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social, index) => {
@@ -252,10 +272,10 @@ const ContactSection = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-4 rounded-lg bg-portfolio-bg hover:bg-portfolio-surface-hover border border-portfolio-surface-hover hover:border-portfolio-accent/30 transition-all duration-300 group"
+                      className="flex items-center gap-4 p-6 rounded-2xl glass border border-portfolio-surface-hover hover:border-portfolio-accent/30 transition-all duration-300 group hover:scale-105 hover:shadow-portfolio-md"
                     >
-                      <IconComponent className={`${social.color} group-hover:scale-110 transition-transform duration-300`} size={20} />
-                      <span className="text-portfolio-text text-sm font-medium">{social.label}</span>
+                      <IconComponent className={`${social.color} group-hover:scale-125 transition-transform duration-300`} size={24} />
+                      <span className="text-portfolio-text font-semibold">{social.label}</span>
                     </a>
                   );
                 })}

@@ -52,35 +52,38 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="py-24">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             <span className="text-portfolio-text">Technical</span>{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Skills</span>
+            <span className="gradient-text">Skills</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+          <div className="w-24 h-1.5 bg-gradient-primary mx-auto rounded-full shadow-portfolio-glow"></div>
+          <p className="text-portfolio-text-muted max-w-2xl mx-auto mt-6 text-lg">
+            Technologies and methodologies I use to build amazing solutions
+          </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
               <Card 
                 key={index}
-                className="bg-portfolio-surface border-portfolio-surface-hover hover:border-portfolio-accent/30 hover:shadow-portfolio-lg transition-all duration-300 p-6 group"
+                className="modern-card p-8 hover:shadow-portfolio-xl group hover:-translate-y-2 transition-all duration-500"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="bg-portfolio-accent/10 p-3 rounded-lg group-hover:bg-portfolio-accent/20 transition-colors duration-300">
-                    <IconComponent className="text-portfolio-accent" size={24} />
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="glass p-4 rounded-2xl group-hover:scale-110 group-hover:shadow-portfolio-glow transition-all duration-300">
+                    <IconComponent className="text-portfolio-accent" size={28} />
                   </div>
-                  <h3 className="text-xl font-semibold text-portfolio-text">{category.title}</h3>
+                  <h3 className="text-xl font-bold text-portfolio-text">{category.title}</h3>
                 </div>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {category.skills.map((skill, i) => (
                     <span 
                       key={i}
-                      className="px-3 py-1 bg-portfolio-bg text-portfolio-text rounded-full text-sm border border-portfolio-surface-hover hover:border-portfolio-accent/30 transition-colors duration-300"
+                      className="px-4 py-2 glass text-portfolio-text rounded-xl text-sm border border-portfolio-surface-hover hover:border-portfolio-accent/40 hover:scale-105 transition-all duration-300 cursor-default"
                     >
                       {skill}
                     </span>
@@ -92,17 +95,20 @@ const SkillsSection = () => {
         </div>
 
         {/* Methodologies */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-portfolio-text text-center mb-8">Methodologies & Specializations</h3>
+        <div className="max-w-5xl mx-auto mb-20">
+          <h3 className="text-3xl font-bold text-portfolio-text text-center mb-12">Methodologies & Specializations</h3>
           
-          <Card className="bg-portfolio-surface border-portfolio-surface-hover p-8">
-            <div className="flex flex-wrap justify-center gap-4">
+          <Card className="modern-card p-10 hover:shadow-portfolio-xl">
+            <div className="flex flex-wrap justify-center gap-6">
               {methodologies.map((methodology, index) => (
                 <div 
                   key={index}
-                  className="px-6 py-3 bg-gradient-primary text-portfolio-accent-foreground rounded-full font-medium hover:shadow-portfolio-glow transition-all duration-300 cursor-default"
+                  className="group cursor-default"
                 >
-                  {methodology}
+                  <div className="px-8 py-4 bg-gradient-primary text-portfolio-accent-foreground rounded-2xl font-semibold hover:shadow-portfolio-glow hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                    <span className="relative z-10">{methodology}</span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -110,18 +116,20 @@ const SkillsSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { number: "2+", label: "Years Experience" },
             { number: "15+", label: "Projects Completed" },
             { number: "5+", label: "Technologies Mastered" },
             { number: "300+", label: "Students Impacted" }
           ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
-                {stat.number}
+            <div key={index} className="text-center group">
+              <div className="modern-card p-8 hover:shadow-portfolio-xl transition-all duration-500 hover:-translate-y-2">
+                <div className="text-5xl lg:text-6xl font-bold gradient-text mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {stat.number}
+                </div>
+                <div className="text-portfolio-text-muted font-medium">{stat.label}</div>
               </div>
-              <div className="text-portfolio-text-muted">{stat.label}</div>
             </div>
           ))}
         </div>

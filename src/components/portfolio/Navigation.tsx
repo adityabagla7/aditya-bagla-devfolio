@@ -42,10 +42,10 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-portfolio-bg/80 backdrop-blur-md border-b border-portfolio-surface">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-portfolio-accent/10">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold text-portfolio-accent">
+          <div className="text-xl font-bold gradient-text">
             Aditya Bagla
           </div>
           
@@ -56,20 +56,23 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-all duration-300 ${
+                className={`relative transition-all duration-300 hover:scale-105 ${
                   activeSection === item.id
-                    ? "text-portfolio-accent bg-portfolio-surface"
-                    : "text-portfolio-text-muted hover:text-portfolio-text hover:bg-portfolio-surface"
+                    ? "text-portfolio-accent bg-portfolio-accent/10 shadow-portfolio-sm"
+                    : "text-portfolio-text-muted hover:text-portfolio-text hover:bg-portfolio-surface/50"
                 }`}
               >
                 {item.label}
+                {activeSection === item.id && (
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-0.5 bg-gradient-primary rounded-full"></div>
+                )}
               </Button>
             ))}
           </div>
 
           <Button 
             onClick={() => scrollToSection("contact")}
-            className="bg-gradient-primary text-portfolio-accent-foreground hover:shadow-portfolio-glow transition-all duration-300"
+            className="btn-modern bg-gradient-primary text-portfolio-accent-foreground hover:shadow-portfolio-glow hover:scale-105 transition-all duration-300"
           >
             Get in Touch
           </Button>

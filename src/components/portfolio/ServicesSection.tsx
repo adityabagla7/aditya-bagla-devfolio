@@ -76,52 +76,52 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-24 bg-portfolio-surface/30">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             <span className="text-portfolio-text">My</span>{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
+            <span className="gradient-text">Services</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+          <div className="w-24 h-1.5 bg-gradient-primary mx-auto rounded-full shadow-portfolio-glow"></div>
           <p className="text-portfolio-text-muted max-w-2xl mx-auto mt-6 text-lg">
             Comprehensive technology solutions tailored to solve real-world problems and drive business growth.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <Card 
                 key={index}
-                className="bg-portfolio-surface border-portfolio-surface-hover hover:border-portfolio-accent/30 hover:shadow-portfolio-lg transition-all duration-300 p-8 group h-full"
+                className="modern-card p-10 hover:shadow-portfolio-xl group h-full hover:-translate-y-2 transition-all duration-500"
               >
                 <div className="flex flex-col h-full">
-                  <div className="mb-6">
-                    <div className="bg-portfolio-accent/10 p-4 rounded-xl w-fit group-hover:bg-portfolio-accent/20 transition-colors duration-300 mb-4">
-                      <IconComponent className="text-portfolio-accent" size={32} />
+                  <div className="mb-8">
+                    <div className="glass p-5 rounded-2xl w-fit group-hover:scale-110 group-hover:shadow-portfolio-glow transition-all duration-300 mb-6">
+                      <IconComponent className="text-portfolio-accent" size={36} />
                     </div>
-                    <h3 className="text-2xl font-bold text-portfolio-text mb-3">{service.title}</h3>
-                    <p className="text-portfolio-text-muted leading-relaxed">{service.description}</p>
+                    <h3 className="text-2xl font-bold text-portfolio-text mb-4">{service.title}</h3>
+                    <p className="text-portfolio-text-muted leading-relaxed text-lg">{service.description}</p>
                   </div>
 
-                  <div className="mb-6">
-                    <h4 className="text-portfolio-accent font-semibold mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
+                  <div className="mb-8">
+                    <h4 className="text-portfolio-accent font-semibold mb-4 text-lg">Key Features:</h4>
+                    <ul className="space-y-3">
                       {service.features.map((feature, i) => (
-                        <li key={i} className="text-portfolio-text-muted flex items-center gap-2 text-sm">
-                          <div className="w-1.5 h-1.5 bg-portfolio-accent rounded-full flex-shrink-0"></div>
-                          {feature}
+                        <li key={i} className="text-portfolio-text-muted flex items-center gap-3">
+                          <div className="w-2 h-2 bg-portfolio-accent rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                          <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   <div className="mt-auto">
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-3 mb-8">
                       {service.technologies.map((tech, i) => (
                         <span 
                           key={i}
-                          className="px-3 py-1 bg-portfolio-bg text-portfolio-accent text-xs rounded-full border border-portfolio-accent/20"
+                          className="px-4 py-2 glass text-portfolio-accent text-sm rounded-xl border border-portfolio-accent/20 hover:scale-105 transition-transform duration-200"
                         >
                           {tech}
                         </span>
@@ -130,8 +130,7 @@ const ServicesSection = () => {
 
                     <Button 
                       onClick={() => scrollToSection("contact")}
-                      variant="outline"
-                      className="w-full border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-portfolio-accent-foreground transition-all duration-300 group-hover:shadow-portfolio-glow"
+                      className="btn-modern w-full bg-gradient-primary text-portfolio-accent-foreground hover:shadow-portfolio-glow hover:scale-105 transition-all duration-300"
                     >
                       Get Started
                       <ArrowRight className="ml-2" size={16} />
@@ -144,16 +143,16 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center">
-          <Card className="bg-gradient-surface border-portfolio-accent/20 p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-portfolio-text mb-4">
+          <Card className="glass-dark border-portfolio-accent/30 p-12 max-w-4xl mx-auto hover:shadow-portfolio-glow-lg transition-all duration-500">
+            <h3 className="text-3xl font-bold text-portfolio-text mb-6">
               Ready to bring your ideas to life?
             </h3>
-            <p className="text-portfolio-text-muted mb-6">
+            <p className="text-portfolio-text-muted mb-8 text-lg leading-relaxed">
               Let's collaborate to build something amazing together. From concept to deployment, I'll help you create scalable, efficient solutions.
             </p>
             <Button 
               onClick={() => scrollToSection("contact")}
-              className="bg-gradient-primary text-portfolio-accent-foreground hover:shadow-portfolio-glow transition-all duration-300 px-8 py-3"
+              className="btn-modern bg-gradient-primary text-portfolio-accent-foreground hover:shadow-portfolio-glow hover:scale-105 transition-all duration-300 px-10 py-4 text-lg"
             >
               Start Your Project
             </Button>

@@ -61,13 +61,23 @@ export default {
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-surface": "var(--gradient-surface)",
+        "gradient-glow": "var(--gradient-glow)",
+        "gradient-mesh": "var(--gradient-mesh)",
       },
       boxShadow: {
+        "portfolio-sm": "var(--shadow-sm)",
+        "portfolio-md": "var(--shadow-md)",
         "portfolio-lg": "var(--shadow-lg)",
+        "portfolio-xl": "var(--shadow-xl)",
         "portfolio-glow": "var(--shadow-glow)",
+        "portfolio-glow-lg": "var(--shadow-glow-lg)",
       },
-      transitionProperty: {
-        "smooth": "var(--transition-smooth)",
+      transitionTimingFunction: {
+        "bounce": "var(--transition-bounce)",
+        "elastic": "var(--transition-elastic)",
+      },
+      backdropBlur: {
+        "xs": "2px",
       },
       borderRadius: {
         lg: "var(--radius)",

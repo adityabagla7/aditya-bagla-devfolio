@@ -43,15 +43,15 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-portfolio-bg border-t border-portfolio-surface">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-portfolio-bg border-t border-portfolio-surface/50">
+      <div className="container mx-auto px-6 py-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-portfolio-text mb-4">
+            <h3 className="text-3xl font-bold gradient-text mb-6">
               Aditya Bagla
             </h3>
-            <p className="text-portfolio-text-muted mb-6 max-w-md leading-relaxed">
+            <p className="text-portfolio-text-muted mb-8 max-w-md leading-relaxed text-lg">
               Software Engineer passionate about building scalable applications and solving real-world problems through innovative technology solutions.
             </p>
             <div className="flex items-center gap-4">
@@ -63,12 +63,12 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-portfolio-surface hover:bg-portfolio-accent/20 p-3 rounded-lg transition-all duration-300 group"
+                    className="glass hover:bg-portfolio-accent/20 p-4 rounded-2xl transition-all duration-300 group hover:scale-110 hover:shadow-portfolio-glow"
                     aria-label={social.label}
                   >
                     <IconComponent 
                       className="text-portfolio-text-muted group-hover:text-portfolio-accent transition-colors duration-300" 
-                      size={20} 
+                      size={24} 
                     />
                   </a>
                 );
