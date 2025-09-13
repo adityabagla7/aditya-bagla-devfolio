@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -9,7 +9,6 @@ const Navigation = () => {
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "skills", label: "Skills" },
-    { id: "services", label: "Services" },
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" },
   ];

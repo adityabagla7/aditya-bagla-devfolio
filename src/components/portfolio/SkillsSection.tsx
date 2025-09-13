@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Code, Database, Cloud, Wrench, BookOpen, Zap } from "lucide-react";
+import { BookOpen, Cloud, Code, Database, Wrench, Zap } from "lucide-react";
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -42,11 +42,13 @@ const SkillsSection = () => {
   ];
 
   const methodologies = [
-    "API Development",
-    "Background Automation", 
-    "Predictive Analytics",
-    "Responsive Web Development",
-    "Scalable Systems"
+    "Web Development",
+    "Software Development", 
+    "Problem Solving",
+    "Team Collaboration",
+    "Data Analysis",
+    "Machine Learning",
+    "AI"
   ];
 
   return (
@@ -96,7 +98,7 @@ const SkillsSection = () => {
 
         {/* Methodologies */}
         <div className="max-w-5xl mx-auto mb-20">
-          <h3 className="text-3xl font-bold text-portfolio-text text-center mb-12">Methodologies & Specializations</h3>
+          <h3 className="text-3xl font-bold text-portfolio-text text-center mb-12">Areas of Focus</h3>
           
           <Card className="modern-card p-10 hover:shadow-portfolio-xl">
             <div className="flex flex-wrap justify-center gap-6">
@@ -115,24 +117,6 @@ const SkillsSection = () => {
           </Card>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { number: "2+", label: "Years Experience" },
-            { number: "15+", label: "Projects Completed" },
-            { number: "5+", label: "Technologies Mastered" },
-            { number: "300+", label: "Students Impacted" }
-          ].map((stat, index) => (
-            <div key={index} className="text-center group">
-              <div className="modern-card p-8 hover:shadow-portfolio-xl transition-all duration-500 hover:-translate-y-2">
-                <div className="text-5xl lg:text-6xl font-bold gradient-text mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {stat.number}
-                </div>
-                <div className="text-portfolio-text-muted font-medium">{stat.label}</div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

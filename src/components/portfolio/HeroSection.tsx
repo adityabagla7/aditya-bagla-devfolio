@@ -1,6 +1,6 @@
+import adityaProfile from "@/assets/image.png";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, Github, Linkedin, Code, Trophy } from "lucide-react";
-import adityaProfile from "@/assets/aditya-profile.jpg";
+import { ArrowDown, Code, Github, Linkedin, Trophy } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -33,11 +33,11 @@ const HeroSection = () => {
               
               <div className="space-y-3">
                 <p className="text-xl text-portfolio-accent font-medium">
-                  API Developer | Cloud Solutions Specialist
+                  Software Developer | Open to work
                 </p>
                 
                 <p className="text-lg text-portfolio-text-muted max-w-2xl leading-relaxed">
-                  I am Aditya Bagla, a Computer Science undergraduate passionate about building scalable applications and solving real-world problems using C++, Golang, Python, and AWS technologies.
+                  I am Aditya Bagla, a Computer Science undergraduate passionate about building scalable applications and solving real-world problems using C++, Golang, Java, Python, and AWS technologies.
                 </p>
               </div>
             </div>

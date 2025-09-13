@@ -1,12 +1,11 @@
-import Navigation from "@/components/portfolio/Navigation";
-import HeroSection from "@/components/portfolio/HeroSection";
 import AboutSection from "@/components/portfolio/AboutSection";
-import ExperienceSection from "@/components/portfolio/ExperienceSection";
-import SkillsSection from "@/components/portfolio/SkillsSection";
-import ServicesSection from "@/components/portfolio/ServicesSection";
-import ProjectsSection from "@/components/portfolio/ProjectsSection";
 import ContactSection from "@/components/portfolio/ContactSection";
+import ExperienceSection from "@/components/portfolio/ExperienceSection";
 import Footer from "@/components/portfolio/Footer";
+import HeroSection from "@/components/portfolio/HeroSection";
+import Navigation from "@/components/portfolio/Navigation";
+import ProjectsSection from "@/components/portfolio/ProjectsSection";
+import SkillsSection from "@/components/portfolio/SkillsSection";
 
 const Index = () => {
   return (
@@ -16,7 +15,6 @@ const Index = () => {
       <AboutSection />
       <ExperienceSection />
       <SkillsSection />
-      <ServicesSection />
       <ProjectsSection />
       <ContactSection />
       <Footer />

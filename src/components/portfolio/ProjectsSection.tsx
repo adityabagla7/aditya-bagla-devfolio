@@ -1,6 +1,6 @@
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, Users, BarChart3, Newspaper, Calendar } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { BarChart3, Github, Newspaper } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -17,8 +17,7 @@ const ProjectsSection = () => {
         "Cost optimization insights",
         "Interactive visualization"
       ],
-      impact: "1000+ students served daily",
-      status: "Production",
+      githubUrl: "https://github.com/adityabagla7/mess-food-waste-Predictor",
       category: "Data Science & AI"
     },
     {
@@ -35,8 +34,7 @@ const ProjectsSection = () => {
         "Responsive design",
         "Real-time notifications"
       ],
-      impact: "Campus-wide news platform",
-      status: "Live",
+      githubUrl: "https://github.com/adityabagla7/Campus-news-",
       category: "Web Development"
     }
   ];
@@ -117,39 +115,17 @@ const ProjectsSection = () => {
                       </div>
                     </div>
 
-                    {/* Project Stats */}
-                    <div className="grid grid-cols-2 gap-8 mb-10">
-                      <div className="modern-card p-6 text-center hover:shadow-portfolio-md transition-all duration-300">
-                        <div className="flex items-center justify-center gap-2 text-portfolio-accent mb-2">
-                          <Users size={20} />
-                          <span className="font-bold">Impact</span>
-                        </div>
-                        <p className="text-portfolio-text font-semibold">{project.impact}</p>
-                      </div>
-                      <div className="modern-card p-6 text-center hover:shadow-portfolio-md transition-all duration-300">
-                        <div className="flex items-center justify-center gap-2 text-portfolio-accent mb-2">
-                          <Calendar size={20} />
-                          <span className="font-bold">Status</span>
-                        </div>
-                        <span className="inline-block bg-green-500/20 text-green-400 px-4 py-2 rounded-full font-semibold">
-                          {project.status}
-                        </span>
-                      </div>
-                    </div>
 
                     {/* Action Buttons */}
                     <div className="flex flex-wrap gap-4">
                       <Button 
+                        asChild
                         className="btn-modern bg-gradient-primary text-portfolio-accent-foreground hover:shadow-portfolio-glow hover:scale-105 transition-all duration-300"
                       >
-                        <Github className="mr-2" size={18} />
-                        View Code
-                      </Button>
-                      <Button 
-                        className="glass border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-portfolio-accent-foreground hover:scale-105 transition-all duration-300"
-                      >
-                        <ExternalLink className="mr-2" size={18} />
-                        Live Demo
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2" size={18} />
+                          View Code
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -159,10 +135,6 @@ const ProjectsSection = () => {
                     <div className="text-center relative z-10">
                       <div className="glass p-12 rounded-3xl mb-8 float group-hover:shadow-portfolio-glow-lg transition-all duration-500">
                         <IconComponent className="text-portfolio-accent mx-auto" size={100} />
-                      </div>
-                      <div className="space-y-3">
-                        <div className="text-4xl font-bold gradient-text">{project.impact.split(' ')[0]}</div>
-                        <div className="text-portfolio-text-muted font-medium">{project.impact.split(' ').slice(1).join(' ')}</div>
                       </div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-glow opacity-20"></div>

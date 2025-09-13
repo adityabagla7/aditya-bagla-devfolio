@@ -13,7 +13,7 @@ const ExperienceSection = () => {
         "Developed and modified gRPC APIs for efficient service communication.",
         "Implemented background job services as scheduled cron jobs using Go and AWS Lambda."
       ],
-      skills: ["Golang", "gRPC", "AWS Lambda", "Microservices"]
+      skills: ["Golang", "gRPC", "AWS Lambda", "Microservices", "S3", "Lambda"]
     },
     {
       title: "Member of Technical Staff",

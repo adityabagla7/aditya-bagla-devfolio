@@ -1,10 +1,11 @@
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, Linkedin, Github, Code, Trophy, Calendar, Clock } from "lucide-react";
-import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
+import { Calendar, Clock, Code, Github, Linkedin, Mail, MapPin, Phone, Send, Trophy } from "lucide-react";
+import { useState } from "react";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -15,17 +16,44 @@ const ContactSection = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
+    // EmailJS configuration
+    const serviceId = 'service_myw4hk5';
+    const templateId = 'template_hjmntdn';
+    const publicKey = 'r8b-hRMzjS30oeJq_';
     
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'adityabaglaa18@gmail.com',
+        },
+        publicKey
+      );
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+      
+      // Reset form
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
